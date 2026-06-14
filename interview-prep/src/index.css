@@ -4,26 +4,26 @@
 /* Theme */
 :root{
   /* Premium Brown / Maroon Theme */
-  --bg-primary:#e49876;
-  --bg-secondary:#e1d2cc;
-  --bg-card:#d8cbc6;
-  --bg-hover:#352925;
+  --bg-primary:#8dc9d7;
+  --bg-secondary:#b0d7e6;
+  --bg-card:#c1daec;
+  --bg-hover:#94bdcf;
 
   /* Accent Colors */
-  --accent-green:#b08968;
-  --accent-blue:#7f5539;
-  --accent-purple:#9d6b53;
-  --accent-orange:#ddb892;
-  --accent-red:#9c6644;
+  --accent-green:#1c7dd3;
+  --accent-blue:#05092c;
+  --accent-purple:#080361;
+  --accent-orange:#012a60;
+  --accent-red:#0e4489;
 
   /* Text */
-  --text-primary:#f66b0e;
-  --text-muted:#6b3c1f;
-  --text-dim:#7c6a60;
+  --text-primary:#00050e;
+  --text-muted:#000301;
+  --text-dim:#30001b;
 
   /* Borders */
-  --border:#43302b;
-  --border-bright:#5b4038;
+  --border:#000000;
+  --border-bright:#000000;
 }
 
 /* Reset */
@@ -170,7 +170,8 @@ body{
 }
 
 .input-dark::placeholder{
-  color:var(--text-muted);
+  color:#9ca3af;
+  opacity:.55;
 }
 
 /* Buttons */

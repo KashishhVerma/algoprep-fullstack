@@ -39,7 +39,6 @@ export default function Login() {
     >
       <div className="animate-fade-up" style={{ width: "100%", maxWidth: 420 }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
-          
           <h1
             className="mono"
             style={{ margin: 0, fontSize: 22, color: "var(--accent-green)" }}
@@ -83,6 +82,7 @@ export default function Login() {
                 style={{ width: "100%" }}
                 type="email"
                 placeholder="you@example.com"
+                autoComplete="off"
                 value={form.email}
                 onChange={(e) =>
                   setForm((p) => ({ ...p, email: e.target.value }))
@@ -104,10 +104,10 @@ export default function Login() {
               </label>
               <input
                 className="input-dark"
-                style={{ width: "100%"  }}
+                style={{ width: "100%" }}
                 type="password"
-                
                 placeholder="••••••••"
+                autoComplete="new-password"
                 value={form.password}
                 onChange={(e) =>
                   setForm((p) => ({ ...p, password: e.target.value }))
