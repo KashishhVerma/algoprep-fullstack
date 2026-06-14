@@ -11,7 +11,6 @@ import {
   Bookmark,
   LogOut,
   Flame,
-  Code2,
 } from "lucide-react";
 
 const links = [
@@ -42,44 +41,39 @@ export default function Sidebar() {
         zIndex: 100,
       }}
     >
+      {/* Logo Section */}
       <div
         style={{
           padding: "20px 16px",
           borderBottom: "1px solid var(--border)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div
-            style={{
-              width: 32,
-              height: 32,
-              borderRadius: 8,
-              background: "var(--accent-green)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Code2 size={18} color="#080b12" />
-          </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <div>
             <div
               className="mono"
               style={{
-                fontSize: 13,
+                fontSize: 18,
                 fontWeight: 700,
                 color: "var(--accent-green)",
               }}
             >
               AlgoPrep
             </div>
-            <div style={{ fontSize: 10, color: "var(--text-muted)" }}>
+
+            <div
+              style={{
+                fontSize: 11,
+                color: "var(--text-muted)",
+              }}
+            >
               Interview Ready
             </div>
           </div>
         </div>
       </div>
 
+      {/* User Section */}
       <div
         style={{
           padding: "14px 16px",
@@ -105,6 +99,7 @@ export default function Sidebar() {
           >
             {user?.name?.charAt(0).toUpperCase()}
           </div>
+
           <div style={{ overflow: "hidden" }}>
             <div
               style={{
@@ -117,11 +112,11 @@ export default function Sidebar() {
             >
               {user?.name}
             </div>
-          
           </div>
         </div>
       </div>
 
+      {/* Streak Section */}
       {currentStreak > 0 && (
         <div
           style={{
@@ -136,17 +131,31 @@ export default function Sidebar() {
           }}
         >
           <Flame size={16} color="#f97316" />
+
           <div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "#f97316" }}>
+            <div
+              style={{
+                fontSize: 15,
+                fontWeight: 700,
+                color: "#f97316",
+              }}
+            >
               {currentStreak} day streak
             </div>
-            <div style={{ fontSize: 10, color: "var(--text-muted)" }}>
+
+            <div
+              style={{
+                fontSize: 10,
+                color: "var(--text-muted)",
+              }}
+            >
               Keep it going!
             </div>
           </div>
         </div>
       )}
 
+      {/* Navigation */}
       <nav style={{ flex: 1, padding: "8px 8px" }}>
         {links.map(({ to, icon: Icon, label }) => (
           <NavLink key={to} to={to} style={{ textDecoration: "none" }}>
@@ -161,26 +170,34 @@ export default function Sidebar() {
                   borderRadius: isActive ? "0 8px 8px 0" : 8,
                   marginBottom: 2,
                   cursor: "pointer",
-                  color: isActive ? "var(--accent-green)" : "var(--text-muted)",
+                  color: isActive
+                    ? "var(--accent-green)"
+                    : "var(--text-muted)",
                   transition: "all 0.2s",
                   marginLeft: isActive ? -8 : 0,
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.background = "var(--bg-hover)";
-                    e.currentTarget.style.color = "var(--text-primary)";
+                    e.currentTarget.style.color =
+                      "var(--text-primary)";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.background = "";
-                    e.currentTarget.style.color = "var(--text-muted)";
+                    e.currentTarget.style.color =
+                      "var(--text-muted)";
                   }
                 }}
               >
                 <Icon size={17} />
+
                 <span
-                  style={{ fontSize: 14, fontWeight: isActive ? 600 : 400 }}
+                  style={{
+                    fontSize: 14,
+                    fontWeight: isActive ? 600 : 400,
+                  }}
                 >
                   {label}
                 </span>
@@ -190,8 +207,12 @@ export default function Sidebar() {
         ))}
       </nav>
 
+      {/* Logout */}
       <div
-        style={{ padding: "12px 8px", borderTop: "1px solid var(--border)" }}
+        style={{
+          padding: "12px 8px",
+          borderTop: "1px solid var(--border)",
+        }}
       >
         <button
           onClick={() => {
@@ -211,7 +232,8 @@ export default function Sidebar() {
             fontSize: 13,
           }}
         >
-          <LogOut size={15} /> Logout
+          <LogOut size={15} />
+          Logout
         </button>
       </div>
     </aside>
